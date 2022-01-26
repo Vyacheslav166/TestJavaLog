@@ -5,7 +5,7 @@
     </properties>
     <Appenders>
         <RollingFile
-                name="rollingFile"
+                name="RollingFile"
                 fileName="${LOG_DIR}/application.log"
                 filePattern="${LOG_DIR}/application.%d{dd-MMM}.log"
                 ignoreExceptions="false">
@@ -22,10 +22,6 @@
         </Console>
     </Appenders>
     <Loggers>
-<!--        <Logger name="exec.Main" level="info">-->
-<!--            <AppenderRef ref="Console"/>-->
-<!--            <AppenderRef ref="RollingFile"/>-->
-<!--        </Logger>-->
         <Root level="info">
             <AppenderRef ref="Console"/>
             <AppenderRef ref="RollingFile"/>
