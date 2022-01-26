@@ -52,7 +52,7 @@ public class MoneyTransferService extends Thread {
             out = accounts.get((int) Math.round(Math.random() * (accounts.size() - 1)));
         }
         logger.info("Ready transaction: Thread = {}, Account out = {}, Account in = {}"
-                , Thread.currentThread()
+                , Thread.currentThread().getName()
                 , out
                 , in);
 
@@ -65,7 +65,7 @@ public class MoneyTransferService extends Thread {
                 }
                 logger.info("Start transaction = {}: Thread = {}, Account out = {}, Account in = {}"
                         , countTransaction
-                        , Thread.currentThread()
+                        , Thread.currentThread().getName()
                         , out
                         , in);
 
@@ -73,9 +73,8 @@ public class MoneyTransferService extends Thread {
                 out.setMoney(out.getMoney() - transactionValue);
                 in.setMoney(in.getMoney() + transactionValue);
 
-                logger.info("Finish transaction = {}: Thread = {}, Account out = {}, Account in = {}"
-                        , countTransaction
-                        , Thread.currentThread()
+                logger.info("Finish transaction: Thread = {}, Account out = {}, Account in = {}"
+                        , Thread.currentThread().getName()
                         , out
                         , in);
 
