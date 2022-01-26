@@ -2,6 +2,9 @@ package org.example.entity;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
+/**
+ * Счет
+ */
 public class Account {
 
     private static final AtomicInteger COUNTER = new AtomicInteger(1);

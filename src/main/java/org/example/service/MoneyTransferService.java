@@ -15,8 +15,9 @@ public class MoneyTransferService extends Thread {
     private final Logger logger = LogManager.getLogger(MoneyTransferService.class);
     //Счетчик транзакций
     public static volatile AtomicInteger countTransaction = new AtomicInteger(0);
-
+    //Список счетов
     private final List<Account> accounts;
+    //Количество транзакций, которое требуется выполнить
     private final Integer totalTransactions;
 
     public MoneyTransferService(List<Account> accounts, Integer totalTransactions) {

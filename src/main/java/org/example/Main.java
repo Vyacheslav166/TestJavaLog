@@ -26,12 +26,12 @@ public class Main {
 
     public static void main(String[] args) {
 
-        //Создаем список счетов
+        //Создаем список счетов согласно заданному количеству
         logger.info("Start main metod");
         for (int i = 0; i < COUNT_ENTITY; i++) {
             accounts.add(new Account(10000L));
         }
-        //Создаем список потоков и запускаем их
+        //Создаем заданное количество потоков и запускаем их
         logger.info("Made accounts");
         for (int i = 0; i < COUNT_THREAD; i++) {
             MoneyTransferService moneyTransferService = new MoneyTransferService(accounts, COUNT_TRANSACTION);
